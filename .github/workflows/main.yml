@@ -2,7 +2,6 @@ name: example-workflow
 on:
   push:
     branches: [ "master" ]
-  workflow_dispatch:
 jobs:
   production-deploy:
     if: GITHUB_WORKFLOW == 'azure-container-webapp.yml'
