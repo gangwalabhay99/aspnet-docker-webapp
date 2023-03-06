@@ -1,0 +1,13 @@
+name: "details workflow"
+on:
+  workflow_run:
+    workflows: ["Build and deploy a container to an Azure Web App"]
+    types:
+      - completed
+jobs:
+  display_details:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2 
+        run: |
+          echo "workflow completed"
