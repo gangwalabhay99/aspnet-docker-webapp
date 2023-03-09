@@ -12,8 +12,8 @@ permissions:
   contents: read
   packages: write
 
-jobs:
-  build:
+jobs: |
+  - job: build
     runs-on: ubuntu-latest
 
     steps:
@@ -39,7 +39,8 @@ jobs:
           tags: ghcr.io/${{ env.REPO }}:${{ github.sha }}
           file: ./Dockerfile
 
-  deploy:
+
+  - job: deploy
     permissions:
       contents: none
     runs-on: ubuntu-latest
