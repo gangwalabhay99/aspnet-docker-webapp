@@ -30,7 +30,7 @@ jobs:
           cache-name: cache-node-modules
         with:
           # npm cache files are stored in `~/.npm` on Linux/macOS
-          path: nuget-packages
+          path: ~/.npm
           key: nuget-packages-${{ hashFiles('**/packages.lock.json') }}
           restore-keys: |
             ${{ runner.os }}-build-${{ env.cache-name }}-
@@ -71,7 +71,7 @@ jobs:
           cache-name: cache-node-modules
         with:
           # npm cache files are stored in `~/.npm` on Linux/macOS
-          path: nuget-packages
+          path: ~/.npm
           key: nuget-packages-${{ hashFiles('**/packages.lock.json') }}
           restore-keys: |
             ${{ runner.os }}-build-${{ env.cache-name }}-
