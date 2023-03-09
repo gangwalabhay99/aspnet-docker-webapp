@@ -33,9 +33,6 @@ jobs:
           path: nuget-packages
           key: nuget-packages-${{ hashFiles('**/packages.lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
             nuget-packages-
             nuget-packages-${{ runner.os }}-
             
@@ -76,9 +73,6 @@ jobs:
           path: nuget-packages
           key: nuget-packages-${{ hashFiles('**/packages.lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
             nuget-packages-
             nuget-packages-${{ runner.os }}-
 
