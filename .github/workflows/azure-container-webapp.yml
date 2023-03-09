@@ -23,7 +23,8 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
         
-      - uses: actions/cache@v3
+      - name: build cache
+        uses: actions/cache@v3
         with:
           path: ~/.nuget/packages
           key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
@@ -59,7 +60,8 @@ jobs:
 
     steps:
     
-      - uses: actions/cache@v3
+      - name: deploy cache
+        uses: actions/cache@v3
         with:
           path: ~/.nuget/packages
           key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
